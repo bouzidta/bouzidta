@@ -77,6 +77,8 @@ body {
   font-size: 11px;
   box-shadow: 0 0 12px rgba(61,240,255,0.25);
 }
+.mic-chip { border-color: var(--dim); color: var(--dim); box-shadow: none; }
+.mic-chip.on { border-color: var(--magenta); color: var(--magenta); box-shadow: 0 0 12px rgba(255,79,216,0.35); }
 
 .layout {
   height: calc(100vh - 112px);
@@ -174,6 +176,55 @@ body {
 .orb-wrap.listening .core-inner { border-color: var(--magenta); }
 .orb-wrap.processing .core-inner { border-color: var(--gold); }
 .hint { margin-top: 18px; color: var(--dim); letter-spacing: 0.08em; }
+#waveform {
+  margin-top: 14px;
+  width: min(90%, 520px);
+  height: 72px;
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+#waveform.live { opacity: 1; }
+.voice-controls {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  margin-top: 12px; font-size: 12px; color: var(--dim);
+}
+.voice-controls label { display: flex; align-items: center; gap: 6px; }
+.voice-controls input[type=range] { width: 90px; accent-color: var(--cyan); }
+.voice-controls select {
+  background: #06101f; color: var(--text); border: 1px solid var(--line); padding: 4px 6px;
+}
+.keys-form { display: flex; flex-direction: column; gap: 8px; }
+.keys-form input, .keys-form button {
+  background: #06101f; color: var(--text); border: 1px solid var(--line); padding: 8px;
+}
+.boot-gate {
+  position: fixed; inset: 0; z-index: 40;
+  display: grid; place-items: center;
+  background: rgba(2, 6, 16, 0.92);
+  backdrop-filter: blur(18px);
+}
+.boot-gate.hidden { display: none; }
+.boot-card {
+  width: min(92vw, 460px);
+  text-align: center;
+  border: 1px solid var(--line);
+  padding: 28px 22px;
+  background: var(--glass);
+  border-radius: 20px;
+}
+.boot-orb {
+  width: 84px; height: 84px; margin: 0 auto 16px; border-radius: 50%;
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 40px rgba(61,240,255,0.4);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.boot-card h2 { font-family: Orbitron, sans-serif; letter-spacing: 0.16em; margin-bottom: 10px; }
+.boot-card p { color: var(--dim); margin-bottom: 18px; line-height: 1.7; }
+#unlock-btn {
+  background: transparent; color: var(--cyan); border: 1px solid var(--cyan);
+  padding: 10px 18px; cursor: pointer; font-family: Cairo, sans-serif;
+  box-shadow: 0 0 18px rgba(61,240,255,0.25);
+}
 
 .tabs { display: flex; gap: 6px; margin-bottom: 10px; }
 .tab { flex: 1; font-size: 11px; letter-spacing: 0.1em; font-family: Orbitron, sans-serif; }
