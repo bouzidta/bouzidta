@@ -1,26 +1,18 @@
-# JARVIS Web System
+# JARVIS Web System (React HUD)
 
-نظام ذكاء اصطناعي تفاعلي يعمل **بالكامل داخل المتصفح** (بدون خادم ذكاء اصطناعي وبدون تثبيت).
-
-## التشغيل
-
-افتح الملف مباشرة أو عبر خادم ثابت:
+وكيل ويب متعدد الوسائط: صوت، أدوات داخل المتصفح، وواجهة سيبرانية حية.
 
 ```bash
-npx --yes serve -l 3000
+npm install
+npm run dev
 ```
 
-ثم افتح المتصفح على المنفذ المعروض.
+افتح المنفذ 5173.
 
-## الأوامر
+## المكونات
+- `src/App.jsx` — الحالة والمحرك
+- `src/components/` — Orb, Waveform, Chat, Tasks, Code Playground, Activation Modal
+- `src/lib/voice.js` — Web Speech + إيقاظ
+- `src/lib/tools.js` — بحث، روابط، مهام، ملاحظات، كود
 
-- `help` قائمة الأدوات
-- `search <كلمات>` بحث ويب في تبويب جديد
-- `open <رابط>` فتح موقع
-- `task add ...` / `tasks` مهام محفوظة في LocalStorage
-- `note add ...` / `notes` ملاحظات محلية
-- `code <وصف>` توليد كود وعرضه مع زر نسخ
-- `speak <نص>` نطق عبر Web Speech API
-- زر الميكروفون للاستماع (Chrome / Edge)
-
-الواجهة: Dark Cyberpunk + Glassmorphism + دائرة حالة مركزية (Standby / Listening / Processing).
+تفعيل صوتي مرة واحدة يفك قيود المتصفح للميكروفون والسماعات.
