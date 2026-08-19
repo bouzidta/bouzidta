@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JARVIS // Web System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Share+Tech+Mono&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◉</span>
+      <div>
+        <h1>J.A.R.V.I.S</h1>
+        <p>Just A Rather Very Intelligent System</p>
+      </div>
+    </div>
+    <div class="top-meta">
+      <span id="clock">--:--:--</span>
+      <span id="date-label">—</span>
+      <span class="chip" id="online-chip">LINK SECURE</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel left-panel">
+      <h2>SYSTEM TELEMETRY</h2>
+      <div class="meters">
+        <div class="meter">
+          <label>CPU SIM</label>
+          <div class="bar"><i id="cpu-bar"></i></div>
+          <span id="cpu-val">12%</span>
+        </div>
+        <div class="meter">
+          <label>MEM CACHE</label>
+          <div class="bar"><i id="mem-bar"></i></div>
+          <span id="mem-val">34%</span>
+        </div>
+        <div class="meter">
+          <label>NET LATENCY</label>
+          <div class="bar"><i id="net-bar"></i></div>
+          <span id="net-val">18ms</span>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div><small>UPTIME</small><strong id="uptime">00:00:00</strong></div>
+        <div><small>COMMANDS</small><strong id="cmd-count">0</strong></div>
+        <div><small>TASKS</small><strong id="task-count">0</strong></div>
+        <div><small>NOTES</small><strong id="note-count">0</strong></div>
+      </div>
+      <h3>QUICK TOOLS</h3>
+      <div class="tool-btns">
+        <button data-cmd="help">مساعدة</button>
+        <button data-cmd="tasks">المهام</button>
+        <button data-cmd="notes">الملاحظات</button>
+        <button data-cmd="code console.log('hello jarvis')">كود</button>
+        <button data-cmd="search open source AI">بحث</button>
+        <button data-cmd="weather">طقس</button>
+      </div>
+    </aside>
+
+    <section class="core">
+      <div class="orb-wrap" id="orb">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="core-glow"></div>
+        <div class="core-inner">
+          <span id="state-label">STANDBY</span>
+        </div>
+      </div>
+      <p class="hint">قل «يا جارفيس» أو اكتب أمراً…</p>
+    </section>
+
+    <aside class="panel right-panel">
+      <div class="tabs">
+        <button class="tab active" data-tab="chat">CHAT</button>
+        <button class="tab" data-tab="tasks">TASKS</button>
+        <button class="tab" data-tab="notes">NOTES</button>
+        <button class="tab" data-tab="code">CODE</button>
+      </div>
+
+      <div class="tab-pane active" id="pane-chat">
+        <div class="chat" id="chat"></div>
+        <form class="composer" id="composer">
+          <button type="button" id="mic-btn" title="Voice">🎙️</button>
+          <input id="input" autocomplete="off" placeholder="أمر أو سؤال…" />
+          <button type="submit">إرسال</button>
+        </form>
+      </div>
+
+      <div class="tab-pane" id="pane-tasks">
+        <form id="task-form" class="inline-form">
+          <input id="task-input" placeholder="مهمة جديدة…" />
+          <button type="submit">+</button>
+        </form>
+        <ul class="list" id="task-list"></ul>
+      </div>
+
+      <div class="tab-pane" id="pane-notes">
+        <form id="note-form" class="inline-form">
+          <input id="note-input" placeholder="ملاحظة…" />
+          <button type="submit">+</button>
+        </form>
+        <ul class="list" id="note-list"></ul>
+      </div>
+
+      <div class="tab-pane" id="pane-code">
+        <div class="code-toolbar">
+          <span>GENERATED CODE</span>
+          <button type="button" id="copy-code">نسخ</button>
+        </div>
+        <pre id="code-view"><code>// سيتم عرض الكود المولّد هنا</code></pre>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    CLIENT-SIDE ONLY · LOCALSTORAGE · WEB SPEECH API · NO SERVER AI KEYS REQUIRED
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
